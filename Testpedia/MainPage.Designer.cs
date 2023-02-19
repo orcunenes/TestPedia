@@ -39,9 +39,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.main = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.logo.SuspendLayout();
             this.topmenu.SuspendLayout();
             this.main.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // logo
@@ -131,11 +133,13 @@
             // 
             // main
             // 
+            this.main.Controls.Add(this.dataGridView1);
             this.main.Controls.Add(this.label1);
             this.main.Location = new System.Drawing.Point(194, 90);
             this.main.Name = "main";
             this.main.Size = new System.Drawing.Size(958, 548);
             this.main.TabIndex = 2;
+            this.main.Paint += new System.Windows.Forms.PaintEventHandler(this.main_Paint);
             // 
             // label1
             // 
@@ -145,6 +149,15 @@
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(134, 52);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(494, 275);
+            this.dataGridView1.TabIndex = 1;
             // 
             // MainPage
             // 
@@ -157,12 +170,14 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.logo);
             this.Name = "MainPage";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "MainPage";
             this.logo.ResumeLayout(false);
             this.logo.PerformLayout();
             this.topmenu.ResumeLayout(false);
             this.main.ResumeLayout(false);
             this.main.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -180,6 +195,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel main;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

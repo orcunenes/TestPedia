@@ -15,6 +15,7 @@ namespace Testpedia
         public MainPage()
         {
             InitializeComponent();
+            fetch();
         }
 
         private void testmaker_Click(object sender, EventArgs e)
@@ -27,6 +28,21 @@ namespace Testpedia
         private void browse_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void main_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        void fetch()
+        {
+            string sql = "select * from Sorular";
+            dataGridView1.DataSource= Fetch.Getdata(sql);
         }
     }
 }

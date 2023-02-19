@@ -33,10 +33,10 @@
             this.questionlist = new System.Windows.Forms.Panel();
             this.topmenu = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.testcode = new System.Windows.Forms.Label();
             this.addquestion = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
             this.clearall = new System.Windows.Forms.Button();
-            this.testcode = new System.Windows.Forms.Label();
             this.logo.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +84,15 @@
             this.panel2.Size = new System.Drawing.Size(173, 548);
             this.panel2.TabIndex = 4;
             // 
+            // testcode
+            // 
+            this.testcode.AutoSize = true;
+            this.testcode.Location = new System.Drawing.Point(19, 522);
+            this.testcode.Name = "testcode";
+            this.testcode.Size = new System.Drawing.Size(62, 13);
+            this.testcode.TabIndex = 1;
+            this.testcode.Text = "Test Code: ";
+            // 
             // addquestion
             // 
             this.addquestion.Location = new System.Drawing.Point(3, 3);
@@ -104,6 +113,7 @@
             this.save.TabIndex = 7;
             this.save.Text = "Save";
             this.save.UseVisualStyleBackColor = false;
+            this.save.Click += new System.EventHandler(this.save_Click);
             // 
             // clearall
             // 
@@ -116,15 +126,6 @@
             this.clearall.Text = "Clear All";
             this.clearall.UseVisualStyleBackColor = false;
             this.clearall.Click += new System.EventHandler(this.clearall_Click);
-            // 
-            // testcode
-            // 
-            this.testcode.AutoSize = true;
-            this.testcode.Location = new System.Drawing.Point(19, 522);
-            this.testcode.Name = "testcode";
-            this.testcode.Size = new System.Drawing.Size(62, 13);
-            this.testcode.TabIndex = 1;
-            this.testcode.Text = "Test Code: ";
             // 
             // MakeTest
             // 

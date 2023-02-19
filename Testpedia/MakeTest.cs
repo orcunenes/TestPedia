@@ -18,6 +18,7 @@ namespace Testpedia
         List<TextBox> Questions = new List<TextBox>();
         List<TextBox> Answers = new List<TextBox>();
         List<TextBox> TrueAnswer = new List<TextBox>();
+        TextBox title=new TextBox();
         string generatedtestcode = string.Empty;
 
         public MakeTest()
@@ -36,6 +37,7 @@ namespace Testpedia
                 Text = "TITLE",
                 ForeColor = Color.Gray,
             };
+            title = TITLE;
             TITLE.Click += new EventHandler(Textbox_click);
             topmenu.Controls.Add(TITLE);
             Titles.Add(TITLE);
@@ -191,15 +193,17 @@ namespace Testpedia
 
         private void save_Click(object sender, EventArgs e)
         {
+            int i = 0;
+
             foreach (TextBox Question in Questions)
             {
-                int i = 0;
                 if (Question.Text != null || Question.Text != string.Empty)
                 {
-                    string sql = "Insert into Sorular(Soru,Dcevap,Ycevap1,Ycevap2,Ycevap3,Testkodu) Values('" + Question.Text + "','" + Answers.Single(x => x.Name == ("Answer1" + (i + 1).ToString())).Text + "','" +
-                                             Answers.Single(x => x.Name == ("Answer2" + (i + 1).ToString())).Text + "','" + Answers.Single(x => x.Name == ("Answer3" + (i + 1).ToString())).Text + "','" + Answers.Single(x => x.Name == ("Answer4" + (i + 1).ToString())).Text + "','" + generatedtestcode + "')";
+                    string sql = "Insert into Sorular(Question,Tanswer,Fanswer1,Fanswer2,Fanswer3,Testcode,Title) Values('" + Question.Text + "','" + Answers.Single(x => x.Name == ("Answer1" + (i + 1).ToString())).Text + "','" +
+                                             Answers.Single(x => x.Name == ("Answer2" + (i + 1).ToString())).Text + "','" + Answers.Single(x => x.Name == ("Answer3" + (i + 1).ToString())).Text + "','" + Answers.Single(x => x.Name == ("Answer4" + (i + 1).ToString())).Text + "','" + generatedtestcode + "','"+title.Text+ "')";
                     savequestion(sql);
-                }   
+                }
+                i++;
             }
         }
         public static bool savequestion(string sql)
@@ -207,6 +211,8 @@ namespace Testpedia
             SQLiteCommand cmd = new SQLiteCommand(sql, Connect.connection);
             Connect.connection.Open();
             cmd.ExecuteReader();
+            Connect.connection.Close();
+
             return true;
         }
     }

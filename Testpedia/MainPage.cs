@@ -34,15 +34,16 @@ namespace Testpedia
         {
 
         }
-
-        private void main_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         void fetch()
         {
             string sql = "select * from Sorular";
             dataGridView1.DataSource= Fetch.Getdata(sql);
+        }
+
+        private void jointest_Click(object sender, EventArgs e)
+        {
+            Entertest entertest= new Entertest();
+            entertest.Show();
         }
     }
 }

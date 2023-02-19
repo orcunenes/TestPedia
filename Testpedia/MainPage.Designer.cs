@@ -38,8 +38,8 @@
             this.browse = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.main = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.logo.SuspendLayout();
             this.topmenu.SuspendLayout();
             this.main.SuspendLayout();
@@ -102,6 +102,7 @@
             this.jointest.TabIndex = 6;
             this.jointest.Text = "Join Test";
             this.jointest.UseVisualStyleBackColor = true;
+            this.jointest.Click += new System.EventHandler(this.jointest_Click);
             // 
             // myprofile
             // 
@@ -139,7 +140,14 @@
             this.main.Name = "main";
             this.main.Size = new System.Drawing.Size(958, 548);
             this.main.TabIndex = 2;
-            this.main.Paint += new System.Windows.Forms.PaintEventHandler(this.main_Paint);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(134, 52);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(494, 275);
+            this.dataGridView1.TabIndex = 1;
             // 
             // label1
             // 
@@ -150,14 +158,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(134, 52);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(494, 275);
-            this.dataGridView1.TabIndex = 1;
             // 
             // MainPage
             // 
